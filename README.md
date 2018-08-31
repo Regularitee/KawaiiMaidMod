@@ -21,7 +21,7 @@ https://www57.atwiki.jp/cataclyj/pages/224.html
 
 
 
-## FAQ:
+## Store FAQ:
 #### How do I use the store?
 - You should start with a box. Open it to get an implant kit. Use the implant kit to unlock the store.
 - You will now have a [Transmitter] and [Receiver]. The Transmitter lets you send raw materials to gain currency. The Receiver lets you exchange currency for items.
