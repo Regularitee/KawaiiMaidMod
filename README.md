@@ -1,8 +1,8 @@
-What is this?
+## What is this?
 
 Translation of the Japanese mod, along with some code tweaking for balance and to better suit recent versions of CDDA. Source: 
 
-What's in this mod?
+## What's in this mod?
 
 - An online store! Accessed by a special implant, you can send packages of raw material to them to gain currency, which you can in turn use to buy their products.
 - Cute uniforms! Maids, nuns, school uniforms, underwear, stockings, etc.
@@ -11,27 +11,27 @@ What's in this mod?
 
 Nearly all items use the "cute" or "AMTS" prefix to make them easily identifiable from base game or other mods' items.
 
-Installation:
+## Installation:
 
 This mod is designed for use with the Chesthole sound pack. You must manually copy the sound files into the proper directory to have compatible sounds.
 
-Source:
+## Source:
 
 https://www57.atwiki.jp/cataclyj/pages/224.html
 
 
 
-FAQ:
-How do I use the store?
+## FAQ:
+#### How do I use the store?
 - You should start with a box. Open it to get an implant kit. Use the implant kit to unlock the store.
 - You will now have a [Transmitter] and [Receiver]. The Transmitter lets you send raw materials to gain currency. The Receiver lets you exchange currency for items.
 
-How do I send raw materials?
+#### How do I send raw materials?
 - Small items like gems can be sent directly.
 - Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the Transmitter menu option.
 
-Why are some things locked?
+#### Why are some options locked?
 - Some store options require higher store ranks to unlock. Ranks are raised by using the store.
 
-I ran out of charges for my devices!
-- Charges slowly accumulate over time. Obtaining higher store ranks will allow faster recharging.
+#### How do I get more charges for the devices?
+- You gain additional points each day. Obtaining higher store ranks will allow faster recharging. At the lower ranks you gain only 1-2 points per day, while at the highest ranks you get 3-6 points per day.
