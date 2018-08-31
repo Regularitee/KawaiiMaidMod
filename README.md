@@ -6,7 +6,7 @@ What's in this mod?
 - Cute uniforms! Maids, nuns, school uniforms, underwear, stockings, etc.
 - Transforming weapons! High-end weapons that can bring melee fighting on par with the advanced fusion/laser weapons some mods introduce.
 - A remote-access store! Accessed remotely via special teleporter device, you can send packages of raw material to them to gain currency, which you can in turn use to buy their products.
-- Three new starts. (Maid, nun, schoolgirl)
+- Three new starts! (Maid, nun, schoolgirl)
 
 Nearly all items use the "cute" prefix to make them easily identifiable from base game or other mods' items.
 
