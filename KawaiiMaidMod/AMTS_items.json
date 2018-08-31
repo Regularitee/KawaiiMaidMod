@@ -88,7 +88,7 @@
 	"id": "kawaii_amts_pacsys",
 	"symbol": "*",
 	"color": "light_gray",
-	"name": "<color_pink>[AMTS]</color> Packaging System",
+	"name": "<color_pink>[AMTS]</color> Matter Compressor",
 	"category": "spare_parts",
 	"description": "This is a packaging system for the A&M dimensional transfer system. Used to compress raw materials into a packages which can be sent to the AMTS in exchange for points.",
 	"price": 0,
