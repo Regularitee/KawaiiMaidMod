@@ -24,14 +24,15 @@ https://www57.atwiki.jp/cataclyj/pages/224.html
 ## Store FAQ:
 #### How do I use the store?
 - You should start with a box. Open it to get an implant kit. Use the implant kit to unlock the store.
-- You will now have a [Transmitter] and [Receiver]. The Transmitter lets you send raw materials to gain currency. The Receiver lets you exchange currency for items.
+- You will now have a [Transmitter] and [Receiver]. The Transmitter lets you send raw materials to gain digital currency. The Receiver lets you exchange currency for items.
 
-#### How do I send raw materials?
-- Small items like gems can be sent directly.
-- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the Transmitter menu option).
+#### How do I get currency?
+- Small items like gems can be sent directly via [Transmitter].
+- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the [Transmitter] menu option).
+- Additionally, you passively gain a very small amount each day, based on rank.
 
 #### Why are some options locked?
-- Some store options require higher store ranks to unlock. Ranks are raised by using the store.
+- The store uses a customer "ranking" system, where those who purchase more are rewarded with access to better goods. Some store options require higher store ranks to unlock.
 
-#### How do I get more charges for the devices?
+#### How do I get more charges for the [Transmitter] and [Receiver] devices?
 - You gain additional points each day. Obtaining higher store ranks will allow faster recharging. At the lower ranks you gain only 1-2 points per day, while at the highest ranks you get 3-6 points per day.
