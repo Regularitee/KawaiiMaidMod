@@ -872,8 +872,8 @@ function gText(name)
 			    be connected to the Alice & Maria Dimensional Transfer network.
 
 			<color_pink>[Implant Installation]</color>
-			        1. Press both power buttons (Fig 1) of the enclosed cylinder simutaniously.
-			        2. Wait until the display on the cylinder shows [Ready]
+				1. Press both power buttons (Fig 1) of the enclosed cylinder simutaniously.
+				2. Wait until the display on the cylinder shows [Ready]
 				3. Apply the marked side of the cylinder to the upper arm (Fig 2)
 				4. Press the button on top of the cylinder to initialize the process.
 			 
@@ -890,18 +890,19 @@ function gText(name)
 				You can give commands simply by thinking about it.
 				By default, an audio response will play in response to commands
 				to assist in verifying the system had properly received your request.
-			<color_pink>[Basic Operation]</color>
-			    <color_light_blue>[Tutorial]/[ON,OFF]</color> : Toggles tutorial guidance
-			    <color_light_blue>[Help]/[Search]</color> : Confirm usage with voice commands
-			    <color_light_blue>[Transfer]/[ ID ]</color> : Two-way item transfer
-			    	 - Please think of the product ID, or imagine the picture of the item 
-				   to place an order with the system
-				 - Please use the matter compression system to send large items (p. 51)
-				 - Please read p. 42 for detailed usage and tips
-			    <color_light_blue>[Time]/[ON/OFF]</color> : Displays time (p. 5)
-			    <color_light_blue>[Thermometer]/[ON/OFF]</color> : Displays temperature (p. 5)
-			    <color_light_blue>[Alarm]</color> : Display alarm in view (p. 5)
-				 
+				NOTE: The implant includes a built-in clock, thermometer, and calendar.
+			<color_pink>[Basic Operation: Earning Currency]</color>
+			- To obtain currency, you must send raw materials to the AMTS master server.
+			- Resources must be packaged using the <color_light_blue>[Matter Compressor]</color>, except diamonds
+			- Request a <color_light_blue>[Matter Compressor]</color> using the <color_light_blue>[Transmitter]</color> menu
+			- <color_green>CRAFT</color> a compressed package using the crafting recipe
+			- Once complete, you may now use the <color_green>SEND</color> command in the <color_light_blue>[Transmitter]</color> menu
+			<color_pink>[Basic Operation: Spending Currency]</color>
+			- Your wallet will show you your current currency level, if you have any
+			- Currency is stored digitally. so currency won't be lost if the Wallet breaks
+			- Use the <color_light_blue>[Receiver]</color> to make purchases
+			- Some options are locked until a higher store rank is achieved.
+		
 			 ---+---+---+---+---+---+---+--------+---+---+---+---+---+---+--- 
 		]]
 	end
@@ -910,14 +911,13 @@ function gText(name)
 			 ---+---+---+---+   A&M Transport System<color_cyan>(AMTS)</color>   +---+---+---+--- 
 			                         <color_cyan>(Owner's Manual)</color> 3/3
 			     
-			 <color_light_blue> [Distance] / [Pointing object] </ color>: Measure the distance (p. 4)
-			 <color_light_blue> [Gadget] / [File] </ color>: Display gadget in view (p. 8)
-			 <color_light_blue> [Memo] / [text] </ color>: Save text (p. 9)
-			 <color_light_blue> [Camera] / [Range instruction] </ color>: Save the view image (p. 11)
-			 <color_light_blue> [Record] / [Start / Stop] </ color>: Save audio (p. 16)
-			 <color_light_blue> [calculation] / [calculation formula] </ color>: Calculator (p. 18)
-			 <color_light_blue> [Open File] / [File] </ color>: Display files, etc. (p. 20)
-			 
+			<color_pink>[Basic Operation: Store Rank]</color>
+			- Buy and sell items to increase rank.
+			- Rank determines which features you can access. Some are locked at the start.
+			- The <color_light_blue>[Transmitter]</color> and <color_light_blue>[Receiver]</color> will gain energy at midnight each day.
+			- The amount restored is directly based on your store rank.
+			- You will be granted free promotional items on rank up as a reward.
+			- Higher ranks may also receive a small passive income at midnight.
 				 
 			 ---+---+---+---+---+---+---+--------+---+---+---+---+---+---+--- 
 		]]
