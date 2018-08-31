@@ -18,3 +18,20 @@ This mod is designed for use with the Chesthole sound pack. You must manually co
 Source:
 
 https://www57.atwiki.jp/cataclyj/pages/224.html
+
+
+
+FAQ:
+How do I use the store?
+- You should start with a box. Open it to get an implant kit. Use the implant kit to unlock the store.
+- You will now have a [Transmitter] and [Receiver]. The Transmitter lets you send raw materials to gain currency. The Receiver lets you exchange currency for items.
+
+How do I send raw materials?
+- Small items like gems can be sent directly.
+- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the Transmitter menu option.
+
+Why are some things locked?
+- Some store options require higher store ranks to unlock. Ranks are raised by using the store.
+
+I ran out of charges for my devices!
+- Charges slowly accumulate over time. Obtaining higher store ranks will allow faster recharging.
