@@ -888,20 +888,21 @@ function gText(name)
 			<color_pink>[How to use the system]</color>
 				The entire system is controlled by a neutral interface.
 				You can give commands simply by thinking about it.
-				By default, an audio response will play in response to commands
+				By default, an audio response will play in response to commands,
 				to assist in verifying the system had properly received your request.
 				NOTE: The implant includes a built-in clock, thermometer, and calendar.
 			<color_pink>[Basic Operation: Earning Currency]</color>
 			- To obtain currency, you must send raw materials to the AMTS master server.
-			- Resources must be packaged using the <color_light_blue>[Matter Compressor]</color>, except diamonds
-			- Request a <color_light_blue>[Matter Compressor]</color> using the <color_light_blue>[Transmitter]</color> menu
-			- <color_green>CRAFT</color> a compressed package using the crafting recipe
-			- Once complete, you may now use the <color_green>SEND</color> command in the <color_light_blue>[Transmitter]</color> menu
+			- Resources must be packaged using the <color_light_blue>[Matter Compressor]</color>, except diamonds.
+			- Request a <color_light_blue>[Matter Compressor]</color> using the <color_light_blue>[Transmitter]</color> menu.
+			- <color_green>CRAFT</color> a compressed package using the crafting recipe.
+			- Once complete, you may now use the <color_green>SEND</color> command in the <color_light_blue>[Transmitter]</color> menu.
 			<color_pink>[Basic Operation: Spending Currency]</color>
-			- Your wallet will show you your current currency level, if you have any
-			- Currency is stored digitally. so currency won't be lost if the Wallet breaks
+			- Your <color_light_blue>[Wallet]</color> will show you your current currency level, if you have any.
+			- Currency is stored digitally, so savings won't be lost if the <color_light_blue>[Wallet]</color> breaks.
 			- Use the <color_light_blue>[Receiver]</color> to make purchases
 			- Some options are locked until a higher store rank is achieved.
+			- You may only store up to <color_green>10000</color> credits in your account at one time.
 		
 			 ---+---+---+---+---+---+---+--------+---+---+---+---+---+---+--- 
 		]]
@@ -918,6 +919,8 @@ function gText(name)
 			- The amount restored is directly based on your store rank.
 			- You will be granted free promotional items on rank up as a reward.
 			- Higher ranks may also receive a small passive income at midnight.
+
+			 
 				 
 			 ---+---+---+---+---+---+---+--------+---+---+---+---+---+---+--- 
 		]]
