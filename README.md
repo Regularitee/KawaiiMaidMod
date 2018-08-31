@@ -28,7 +28,8 @@ https://www57.atwiki.jp/cataclyj/pages/224.html
 
 #### How do I get currency?
 - Small items like gems can be sent directly via [Transmitter].
-- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the [Transmitter] menu option).
+- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor/Packaging System (obtainable by using the [Transmitter] menu option).
+- You can then pack raw materials by crafting the relevant recipe, and using the "Send" option in the Transmitter
 - Additionally, you passively gain a very small amount each day, based on rank.
 - Please note currency is digital. So even in the event a wallet device is lost or destroyed, the currency will not be lost. It's more just for checking how much currency you have saved. 
 - Please note you can only store up to 10000 currency on your account.
