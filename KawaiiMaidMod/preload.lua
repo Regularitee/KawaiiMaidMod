@@ -721,11 +721,11 @@ function EditCharges(name, point)
 			item.charges = item.charges + point
 			if item.charges > item:ammo_capacity() then
 				item.charges = item:ammo_capacity()
-				msg(item:display_name() .. " The points are at maximum capacity.")
+				msg(item:display_name() .. " The device cannot store any further charges.")
 			end
 			msg(item:display_name())
 		else
-			msg(item:display_name() .. " The points are at maximum capacity.")
+			msg(item:display_name() .. " The device cannot store any further charges.")
 		end
 	end
 	if point < 0 then
@@ -847,7 +847,7 @@ function gText(name)
 	--本文22行が限界っぽい
 	if name == "boxmemo" then
 		text = _[[
-		                   <color_cyan>This note was pasted on the box.</color>
+		          <color_cyan>This note was pasted on the box.</color>
 		  You have been accepted into the A&M Transport System beta test.
 		  Thank you for your interest in supporting our company.
 		  
@@ -869,11 +869,11 @@ function gText(name)
 			 
 			<color_pink>[Overview]</color>
 			    First you must install the implant kit as per instructions, so you can 
-				be connected to the Alice & Maria Dimensional Transfer network.
+			    be connected to the Alice & Maria Dimensional Transfer network.
 
 			<color_pink>[Implant Installation]</color>
-			    1. Press both power buttons (Fig 1) of the enclosed cylinder simutaniously.
-			    2. Wait until the display on the cylinder shows [Ready]
+			        1. Press both power buttons (Fig 1) of the enclosed cylinder simutaniously.
+			        2. Wait until the display on the cylinder shows [Ready]
 				3. Apply the marked side of the cylinder to the upper arm (Fig 2)
 				4. Press the button on top of the cylinder to initialize the process.
 			 
@@ -894,7 +894,7 @@ function gText(name)
 			    <color_light_blue>[Tutorial]/[ON,OFF]</color> : Toggles tutorial guidance
 			    <color_light_blue>[Help]/[Search]</color> : Confirm usage with voice commands
 			    <color_light_blue>[Transfer]/[ ID ]</color> : Two-way item transfer
-			     - Please think of the product ID, or imagine the picture of the item 
+			    	 - Please think of the product ID, or imagine the picture of the item 
 				   to place an order with the system
 				 - Please use the matter compression system to send large items (p. 51)
 				 - Please read p. 42 for detailed usage and tips
@@ -916,7 +916,7 @@ function gText(name)
 			 <color_light_blue> [Camera] / [Range instruction] </ color>: Save the view image (p. 11)
 			 <color_light_blue> [Record] / [Start / Stop] </ color>: Save audio (p. 16)
 			 <color_light_blue> [calculation] / [calculation formula] </ color>: Calculator (p. 18)
-			 <color_light_blue> [Open File] / [File] </ color>: Display images, sounds, etc. (p. 20)
+			 <color_light_blue> [Open File] / [File] </ color>: Display files, etc. (p. 20)
 			 
 				 
 			 ---+---+---+---+---+---+---+--------+---+---+---+---+---+---+--- 
