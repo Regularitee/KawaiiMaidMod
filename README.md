@@ -28,7 +28,7 @@ https://www57.atwiki.jp/cataclyj/pages/224.html
 
 #### How do I send raw materials?
 - Small items like gems can be sent directly.
-- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the Transmitter menu option.
+- Bulk raw materials, such as scrap metal, wood, or cloth, must be packaged first via the Matter Compressor (obtainable by using the Transmitter menu option).
 
 #### Why are some options locked?
 - Some store options require higher store ranks to unlock. Ranks are raised by using the store.
