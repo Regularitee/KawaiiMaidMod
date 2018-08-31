@@ -13,7 +13,7 @@ Nearly all items use the "cute" or "AMTS" prefix to make them easily identifiabl
 
 ## Installation:
 
-This mod is designed for use with the Chesthole sound pack. You must manually copy the sound files into the proper directory to have compatible sounds.
+This mod is includes sound files specific for the Chesthole soundpack. If you want to utilize them, you need to copy the relevant files to said soundpack's folder.
 
 ## Source:
 
