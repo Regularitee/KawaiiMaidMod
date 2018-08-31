@@ -149,10 +149,10 @@ function amts_reciver(item2, active)
 
 	if AMTS_Rank > 1 then
 		equipStr = "Buy a product"
-		materialStr = "Sell resources"
+		materialStr = "Buy raw materials"
 	end
 	if AMTS_Rank > 2 then
-		liquidStr = "Liquid Transfer"
+		liquidStr = "Buy liquids"
 	end
 	if AMTS_Rank > 4 then
 		armsStr = "AM-ARMS Controller"
@@ -177,7 +177,7 @@ function amts_reciver(item2, active)
 				cmsg("This requires at least store rank 3", "red")
 				return
 			end
-			local no = LiquidMenu("What liquid do you wish transfered？(Points::" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP ..")")
+			local no = LiquidMenu("What liquid do you wish to purchase？(Points::" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP ..")")
 			if no == #l_name then
 				msg("Transaciton cancelled")
 				return
