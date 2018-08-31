@@ -435,7 +435,7 @@ function EditRP(point)
 			local item = item("kawaii_amts_eve",1)
 			item:put_in(mag)
 			player:i_add(item)
-			msg("<color_light_green>ランクアップボーナス:</color>" .. item:display_name())
+			msg("<color_light_green>Rank up bonus:</color>" .. item:display_name())
 			GiveItem("kawaii_eve_mag")
 			GiveItem("kawaii_scarf")
 		elseif i == 6 then
@@ -501,7 +501,7 @@ function ARMSMenu(title)
 	local choice = -1
 	menu.title = title
 	local n = {
-	"EVEマガジン装填(20)", 500, 5
+	"EVE magazine loading", 500, 5
 	}
 
 	local name = {}
@@ -518,7 +518,7 @@ function ARMSMenu(title)
 		menu:addentry(name2)
 	end
 
-	menu:addentry("やめる")
+	menu:addentry("Cancel")
 	menu:query(true)
 	local no = menu.selected
 
@@ -580,7 +580,7 @@ function LiquidMenu(title)
 		menu:addentry(name)
 	end
 	
-	menu:addentry("やめる")
+	menu:addentry("Cancel")
 	menu:query(true)
 	choice = menu.selected
 	return choice
@@ -643,7 +643,7 @@ function RewardListMenu(title,itemlist)
 		menu:addentry(name2)
 	end
 	
-	menu:addentry("やめる")
+	menu:addentry("Cancel")
 	menu:query(true)
 	local no = menu.selected
 	
