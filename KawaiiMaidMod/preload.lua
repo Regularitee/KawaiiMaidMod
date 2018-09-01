@@ -95,19 +95,19 @@ local equip_list = {
 
 -- ■液体表示名,内容量(L),id,コスト,ランク
 local liquid_list = {
-	"水", 2, "water", 250, 3, --R3は10日目。早ければ車両を触り始める頃？
-	"綺麗な水", 0.5, "water_clean", 200, 3,
-	"ランプオイル", 0.5, "lamp_oil", 500, 3,
-	"ガソリン", 0.5, "gasoline", 500, 3,
-	"綺麗な水", 2, "water_clean", 500, 4,
-	"ランプオイル", 2, "lamp_oil", 1000, 4,
-	"ガソリン", 2, "gasoline", 1000, 4,
-	"水", 10, "water", 1000, 5, --R5は1年目秋終わり頃。基本的な物が揃う頃？ここからチャージ量とか変わるから1日あたり1.5RP
-	"ガソリン", 10, "gasoline", 1500, 5,
-	"軽油", 10, "diesel", 1500, 5,
-	"水", 20, "water", 1500, 7, --R7は2年目夏初め？
-	"ガソリン", 20, "gasoline", 3000, 7,
-	"軽油", 20, "diesel", 3000, 7
+	"Water", 2, "water", 250, 3, --R3は10日目。早ければ車両を触り始める頃？
+	"Clean Water", 0.5, "water_clean", 200, 3,
+	"Lamp Oil", 0.5, "lamp_oil", 500, 3,
+	"Gasoline", 0.5, "gasoline", 500, 3,
+	"Clean Water", 2, "water_clean", 500, 4,
+	"Lamp Oil", 2, "lamp_oil", 1000, 4,
+	"Gasoline", 2, "gasoline", 1000, 4,
+	"Water", 10, "water", 1000, 5, --R5は1年目秋終わり頃。基本的な物が揃う頃？ここからチャージ量とか変わるから1日あたり1.5RP
+	"Gasoline", 10, "gasoline", 1500, 5,
+	"Diesel", 10, "diesel", 1500, 5,
+	"Water", 20, "water", 1500, 7, --R7は2年目夏初め？
+	"Gasoline", 20, "gasoline", 3000, 7,
+	"Diesel", 20, "diesel", 3000, 7
 }
 
 local l_name = {}
