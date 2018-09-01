@@ -15,6 +15,8 @@ Nearly all items use the "cute" or "AMTS" prefix to make them easily identifiabl
 
 This mod is includes sound files specific for the Chesthole soundpack. If you want to utilize them, you need to copy the relevant files to said soundpack's folder.
 
+Designed for use with the SomeDeadGuy's tileset: https://github.com/SomeDeadGuy/Cata-MSX-DeadPeopleTileset
+
 ## Source:
 
 https://www57.atwiki.jp/cataclyj/pages/224.html
