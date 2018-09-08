@@ -228,7 +228,7 @@ function p3menu(list,item2)
 	if name ~= nil then
 		ReceiveItem(item(name,1),cost,rank,item2.charges)
 	else
-		msg("キャンセルしました")
+		msg("Transaction cancelled.")
 	end
 end
 	
@@ -256,7 +256,7 @@ function amts_transmitter(item2, active)
 		end
 		
 		player:i_add(item("kawaii_amts_pacsys",1))
-		cmsg("Received an AMTS packaging system", "cyan")
+		cmsg("Received an AMTS Matter Compressor", "cyan")
 		EditCharges(DNt, -1)
 	elseif c == 3 then
 	
@@ -414,7 +414,7 @@ function EditRP(point)
 	if point > 0 and AMTS_Rank > oldRank then
 		cmsg("Your AMTS rank has increased!(Rank" .. i .. ")", "light_green")
 		local apt = "Bonus points earned" .. ap[math.ceil(i/2)] .. "->" .. ap[math.ceil(i/2)+1]
-		local bonus = "You have received a free bonus item as a reward"
+		local bonus = "Congratulation! You have reached the next store rank!"
 		--参考用:ap = { 0, 100, 200, 300, 500, 1000 }
 		
 		if i == 2 then
@@ -913,7 +913,7 @@ function gText(name)
 			                         <color_cyan>(Owner's Manual)</color> 3/3
 			     
 			<color_pink>[Basic Operation: Store Rank]</color>
-			- Buy and sell items to increase rank.
+			- Sell raw materials to increase rank.
 			- Rank determines which features you can access. Some are locked at the start.
 			- The <color_light_blue>[Transmitter]</color> and <color_light_blue>[Receiver]</color> will gain energy at midnight each day.
 			- The amount restored is directly based on your store rank.
