@@ -19,7 +19,7 @@ Designed for use with the SomeDeadGuy's tileset: https://github.com/SomeDeadGuy/
 
 ## Source:
 
-https://www57.atwiki.jp/cataclyj/pages/224.html
+https://drive.google.com/drive/folders/1EHPazdmx9to86IWN7zxkvFjPiUmsFGZl
 
 
 
