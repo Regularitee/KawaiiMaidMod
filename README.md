@@ -21,6 +21,7 @@ Designed for use with the SomeDeadGuy's tileset: https://github.com/SomeDeadGuy/
 
 https://drive.google.com/drive/folders/1EHPazdmx9to86IWN7zxkvFjPiUmsFGZl
 
+Files used with permission of author, under CC-SA 3.0 license. http://creativecommons.org/licenses/by-sa/3.0/
 
 
 ## Store FAQ:
