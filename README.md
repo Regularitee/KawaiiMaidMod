@@ -1,3 +1,5 @@
+Last updated to KawaiiMaidMod v2.1.3
+
 ## What is this?
 
 Translation of the Japanese mod, along with some code tweaking for balance and to better suit recent versions of CDDA. Source: 
