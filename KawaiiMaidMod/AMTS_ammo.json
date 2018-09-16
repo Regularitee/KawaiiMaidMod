@@ -21,9 +21,9 @@
 	"ammo_type": "kawaii_308AM",
 	"range": 50,
 	"damage": 45,
-	"pierce": 25,
+	"pierce": 20,
 	"dispersion": 20,
-	"recoil": 1500,
+	"recoil": 500,
 	"effects": [ "COOKOFF" ],
 	"flags" : [ "UNRECOVERABLE", "NO_SALVAGE" ]
  }

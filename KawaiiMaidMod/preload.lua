@@ -21,46 +21,53 @@ end
 local reward_list = {
 	"bottle_plastic_small", 50, 1,
 	"bottle_plastic", 100, 1,
-	"jug_plastic", 200, 2,
+	"detergent", 200, 2,
 	"jar_glass", 150, 2,
-	"bottle_glass", 250, 2,
-	"jar_3l_glass", 500, 2,
 	"kawaii_bottle_2l", 200, 2,
-	"kawaii_jerrycan_10l", 500, 2,
-	"kawaii_jerrycan_20l", 700, 2,
+	"kawaii_jerrycan_10l", 300, 2,
+	"kawaii_jerrycan_20l", 600, 2,
 	"lighter", 100, 2,
 	"emer_blanket", 300, 2,
 	"picklocks", 700, 2,
+	"nail", 300, 3,
 	"duct_tape", 1000, 3,
-	"small_storage_battery", 500, 3,
+	"small_storage_battery", 300, 3,
 	"battery", 500, 3,
 	"toolbox", 1000, 3,
 	"welder", 2000, 3,
 	"soldering_iron", 750, 3,
 	"solder_wire", 200, 3,
+	"gunpowder", 500, 4,
+	"copper", 500, 4,
 	"30gal_drum", 1000, 4,
 	"smokebomb", 500, 4,
 	"flashbang", 500, 4,
-	"EMPbomb", 2000, 4,
+	"EMPbomb", 500, 4,
 	"generator_7500w", 2000, 4,
 	"battery_ups", 1000, 4,
 	"e_tool", 500, 5,
-	"kawaii_portable_kitchen", 3000, 5,
-	"medium_storage_battery", 1000, 5,
-	"atomic_light", 1000, 5,
+	"kawaii_portable_kitchen", 1000, 5,
+	"medium_storage_battery", 600, 5,
 	"atomic_lamp", 2000, 5,
 	"1st_aid", 2000, 6,
 	"bio_tools", 3000, 6,
+	"solar_panel_v2", 1000, 6,
+	"large_repairkit", 2500, 6,
+	"anesthesia", 1000, 7,
 	"bio_power_storage_mkII", 2000, 7,
-	"kawaii_UPS", 5000, 7,
-	"storage_battery", 2000, 8,
-	"solar_panel_v3", 5000, 9,
-	"plut_cell", 2000, 10
+	"kawaii_UPS", 3000, 7,
+	"omnicamera", 800, 7,
+	"headlight_reinforced", 500, 7,
+	"storage_battery", 1000, 8,
+	"solar_panel_v3", 3000, 8,
+	"bio_probability_travel", 5000, 9, --R9は3年目直前。解放要素が恐らく最も少ない所…しかしここまできたらラストのR10まで行って色々解放されたくなる
+	"bio_speed", 5000, 9,
+	"plut_cell", 3000, 10
 }
 
 -- ■素材系アイテム表示名,id,cost,rank --序盤はポイントが重すぎてなんらかの逼迫した状況専用そう。R5あたりからAPとチャージ量と係数分で現実的に…と思ったらRank5からポイント需要が…
 local material_list = {
-	"plastic bags", "bag_plastic", 100, 2,
+	"plastic bags", "bag_plastic", 200, 2,
 	"wood planks", "2x4", 500, 2,
 	"plastic piece", "plastic_chunk", 500, 2,
 	"leather", "leather", 500, 2, 
@@ -106,8 +113,8 @@ local liquid_list = {
 	"Gasoline", 10, "gasoline", 1500, 5,
 	"Diesel", 10, "diesel", 1500, 5,
 	"Water", 20, "water", 1500, 7, --R7は2年目夏初め？
-	"Gasoline", 20, "gasoline", 3000, 7,
-	"Diesel", 20, "diesel", 3000, 7
+	"Gasoline", 20, "gasoline", 2500, 7,
+	"Diesel", 20, "diesel", 2500, 7
 }
 
 local l_name = {}
@@ -129,7 +136,7 @@ AMTS_RP = 0
 AMTS_Rank = 1
 AMTS_NextRP = 0
 reqRP = { 3, 7, 12, 15, 20, 25, 30, 50, 60, 9999 } --デフォルトで1季14日、年56日 R1-4[1/D]R5-[1.5/D]R8-[2/D] R3=10 R5=37(27) R7=82(34) R8=112(23) R9=163(26) R10=223(30)
-ap = { 0, 100, 200, 300, 500, 1000 }
+ap = { 0, 100, 200, 400, 800, 2000 }
 
 -- ■打つのがめんどくさい
 DNr = "kawaii_amts_reciver"
@@ -155,7 +162,7 @@ function amts_reciver(item2, active)
 		liquidStr = "Buy liquids"
 	end
 	if AMTS_Rank > 4 then
-		armsStr = "AM-ARMS Controller"
+		armsStr = "AM-ARMS Ammunition Interface"
 	end
 	
 	local c = CreateMenu("AMTS Product Catalogue (Points:" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP ..")" , armsStr, "Make a purchase", materialStr, liquidStr, equipStr, "Cancel")
@@ -191,6 +198,8 @@ function amts_reciver(item2, active)
 				bottle = "kawaii_bottle_2l"
 			elseif l_amount[no] == 10 then
 				bottle = "kawaii_jerrycan_10l"
+			elseif l_amount[no] == 20 then
+				bottle = "kawaii_jerrycan_20l"
 			end
 
 			local liquid = item(l_id[no],1)
@@ -213,12 +222,13 @@ function amts_reciver(item2, active)
 end
 
 -- ■debug
-function debugAdd()
-	EditCharges(DNr, 1)
-	EditCharges(DNt, 1)
-	EditRP(5)
-	EditPoint(500)
-	msg("AP",getAP())
+function debugAdd(point)
+	EditCharges(DNr, 6)
+	EditCharges(DNt, 12)
+
+	EditPoint(point)
+
+	msg("DebugAdded!!")
 end
 
 -- ■3要素配列用転送メニュー(手抜き用)
@@ -306,7 +316,7 @@ function ReceiveItem(item,cost,rank,charges)
 		return
 	end
 	
-	if item:ammo_type():str() == "battery" then
+	if item:ammo_type():str() == "battery" and item:typeId() ~= "kawaii_UPS" then
 		local citem = item("battery",1)
 		citem.charges = item:ammo_capacity()
 		item:fill_with(citem)
@@ -355,28 +365,6 @@ function SendItem(item,point,charges)
 	player:i_rem(item)
 	msg("<color_pink>[+" .. point .. "Point]</color>" .. item:display_name() .. " has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
 	EditRP(1)
-end
-
--- ■納品アイテム確認用リストを表示
-function viewNouhin()
-	local text = "         <<  Delivery Item List  >>     \n"
-	for i in pairs(pac_name) do
-		text = text .. "<color_pink>[" .. pac_point[i] .. "Point]</color> " .. item(pac_name[i],1):display_name() .. "\n"
-	end
-	game.popup(text)
-end
-
--- ■自動獲得ポイントを返す
-function getAP()
-	return ap[math.floor(AMTS_Rank/2)+1]
-end
-
--- ■地形idを返す
-function getFloorID(point)
-	local terrain_int_id = map:ter(point):to_i()
-	local terrain = game.get_terrain_type(terrain_int_id)
-	local terrain_str_id = terrain.id:str()
-	return terrain_str_id
 end
 
 -- ■ランクポイントの増減と関連処理(初期化ロードは0で)
@@ -501,7 +489,7 @@ function ARMSMenu(title)
 	local choice = -1
 	menu.title = title
 	local n = {
-	"EVE magazine loading", 500, 5
+	"EVE Magazine Reloading (20 rnds)", 500, 5
 	}
 
 	local name = {}
@@ -522,16 +510,39 @@ function ARMSMenu(title)
 	menu:query(true)
 	local no = menu.selected
 
+	
+		if rank[no+1] > AMTS_Rank then
+			msg("ランクが不足しています。")
+			return
+		end
+		if cost[no+1] > AMTS_Point then
+			msg("ポイントが不足しています。")
+			return
+		end
 	if no < #name then
 		if no == 0 then
-			msg("The Eve magazine was loaded via AMTS")
-			local itemstr = "kawaii_eve_mag"
+
+			if EditCharges(DNr,-1) == 0 then
+				return
+			end
+			
+			local cmag = GetInvItem("kawaii_eve_mag")
+			if cmag:typeId() == "null" then
+				cmsg("EVE magazine not found.","red")
+				return
+			end
+			
+			player:i_rem(cmag)
 			local ammo = item("kawaii_308AM",1)
-			local item = GetInvItem(itemstr)
-			ammo.charges = item:ammo_capacity() - item:ammo_remaining()
-			item:put_in(ammo)
+
+
+			ammo.charges = 20
+			local mag = item("kawaii_eve_mag",1)
+			mag:put_in(ammo)
+			player:i_add(mag)
+			
 			EditPoint(-(cost[no+1]))
-			EditCharges(DNr,-1)
+			msg("The Eve magazine was loaded via AMTS.")
 		end
 		return
 	else
@@ -617,7 +628,7 @@ function RewardListMenu(title,itemlist)
 	for i in pairs(n) do
 		local item = item(name[i],1)
 		
-		if item:ammo_type():str() == "battery" then
+		if item:ammo_type():str() == "battery" and item:typeId() ~= "kawaii_UPS" then
 			local citem = item("battery",1)
 			citem.charges = item:ammo_capacity()
 			item:fill_with(citem)
@@ -690,12 +701,17 @@ end
 
 -- ■ポイントの増減
 function EditPoint(point)
+	if InitFlag_Point == 0 then
+		local ampv = item("kawaii_amts_point_viewer",1)
+		AMTS_MaxPoint = ampv:ammo_capacity()
+		InitFlag_Point = 1
+	end
 	local item = GetInvItem("kawaii_amts_point_viewer")
 	Load_AMTS_Point()
 	AMTS_Point = AMTS_Point + point
 	
-	if AMTS_Point == item:ammo_capacity() or AMTS_Point > item:ammo_capacity() then
-		AMTS_Point = item:ammo_capacity()
+	if AMTS_Point == AMTS_MaxPoint or AMTS_Point > AMTS_MaxPoint then
+		AMTS_Point = AMTS_MaxPoint
 		msg("AMTS point limit reached.")
 	end
 	
@@ -736,7 +752,7 @@ function EditCharges(name, point)
 		end
 	end
 	
-	return item.charges
+	return 1
 end
 
 -- ■足下のアイテムを検索する
@@ -755,9 +771,9 @@ end
 
 -- ■インベントリ内のアイテムをid検索してitem型で返す
 function GetInvItem(itemid)
-	local i = 0
+	local i = -1
 	local item = player:i_at(i)
-	while not item:is_null() do
+	while i == -1 or item:typeId() ~= "null" do
 		if tostring(item:typeId()) == itemid then
 			item = player:i_at(i)
 			break
@@ -768,6 +784,27 @@ function GetInvItem(itemid)
 	return item
 end
 
+- ■納品アイテム確認用リストを表示
+function viewNouhin()
+	local text = "         <<  納品アイテムリスト  >>     \n"
+	for i in pairs(pac_name) do
+		text = text .. "<color_pink>[" .. pac_point[i] .. "Point]</color> " .. item(pac_name[i],1):display_name() .. "\n"
+	end
+	game.popup(text)
+end
+
+-- ■自動獲得ポイントを返す
+function getAP()
+	return ap[math.floor(AMTS_Rank/2)+1]
+end
+
+-- ■地形idを返す
+function getFloorID(point)
+	local terrain_int_id = map:ter(point):to_i()
+	local terrain = game.get_terrain_type(terrain_int_id)
+	local terrain_str_id = terrain.id:str()
+	return terrain_str_id
+end
 -- ■メニューつくる
 function CreateMenu(title,...)
 	local n = {...}
