@@ -3,6 +3,8 @@
 -- ■納品アイテムid,ポイント
 local pac_list = {
 	"diamond", 1000,
+	"gold_small", 500,
+	"silver_small", 250,
 	"kawaii_amts_pac_t1_01", 250,
 	"kawaii_amts_pac_t1_02", 250,
 	"kawaii_amts_pac_t1_03", 250,
@@ -254,8 +256,46 @@ function amts_transmitter(item2, active)
 			msg("Transaction cancelled.")
 			return
 		end
-		
-		SendItem(GetInvItem(pac_name[no]),pac_point[no],item2.charges)
+
+		if pac_name[no] == "silver_small" then
+			local ritem = GetInvItem(pac_name[no])
+			if ritem.charges < 100 then
+				msg("not enough silver")
+				return
+			elseif ritem.charges == 100 then
+				EditPoint(250)
+				EditCharges(DNt, -1)
+				player:i_rem(ritem)
+				msg("<color_pink>[+ 250 Point]</color>silver has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
+				EditRP(1)
+			elseif ritem.charges > 100 then
+				EditPoint(250)
+				EditCharges(DNt, -1)
+				ritem.charges = ritem.charges - 100
+				msg("<color_pink>[+ 250 Point]</color>silver has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
+				EditRP(1)
+			end
+		elseif pac_name[no] == "gold_small" then
+			local ritem = GetInvItem(pac_name[no])
+			if ritem.charges < 100 then
+				msg("not enough gold")
+				return
+			elseif ritem.charges == 100 then
+				EditPoint(500)
+				EditCharges(DNt, -1)
+				player:i_rem(ritem)
+				msg("<color_pink>[+ 500 Point]</color>gold has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
+				EditRP(1)
+			elseif ritem.charges > 100 then
+				EditPoint(500)
+				EditCharges(DNt, -1)
+				ritem.charges = ritem.charges - 100
+				msg("<color_pink>[+ 500 Point]</color>gold has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
+				EditRP(1)
+			end
+		else
+			SendItem(GetInvItem(pac_name[no]),pac_point[no],item2.charges)
+		end
 	elseif c == 1 then
 		msg("Check the purchase list")
 		viewNouhin()
