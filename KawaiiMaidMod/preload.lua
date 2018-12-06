@@ -17,7 +17,7 @@ for i=1, #pac_list/2 do
 	pac_point[i] = pac_list[i*2]
 end
 
--- ■一般アイテムid,cost,rank --要チェック:ライター・ダクトテープ・電池・手榴弾類。R3まで使い道が無くて溜まる一方なので何か入れたい
+-- ■一般アイテムid,cost,rank --ツール類が探索で揃ってるとR5までポイントが余る
 local reward_list = {
 	"bottle_plastic_small", 50, 1,
 	"bottle_plastic", 100, 1,
@@ -25,28 +25,28 @@ local reward_list = {
 	"jar_glass", 150, 2,
 	"kawaii_bottle_2l", 200, 2,
 	"kawaii_jerrycan_10l", 300, 2,
-	"kawaii_jerrycan_20l", 600, 2,
+	"kawaii_jerrycan_20l", 500, 2,
 	"lighter", 100, 2,
 	"emer_blanket", 300, 2,
-	"picklocks", 700, 2,
-	"nail", 300, 3,
+	"picklocks", 500, 2,
+	"nail", 250, 3,
 	"duct_tape", 1000, 3,
 	"small_storage_battery", 300, 3,
 	"battery", 500, 3,
-	"toolbox", 1000, 3,
+	"toolbox", 1500, 3,
 	"welder", 2000, 3,
-	"soldering_iron", 750, 3,
-	"solder_wire", 200, 3,
+	"soldering_iron", 1000, 3,
+	"solder_wire", 500, 3,
 	"gunpowder", 500, 4,
 	"copper", 500, 4,
 	"30gal_drum", 1000, 4,
 	"smokebomb", 500, 4,
 	"flashbang", 500, 4,
-	"EMPbomb", 500, 4,
+	"EMPbomb", 750, 4,
 	"generator_7500w", 2000, 4,
 	"battery_ups", 1000, 4,
-	"e_tool", 500, 5,
-	"kawaii_portable_kitchen", 1000, 5,
+	"kawaii_portable_kitchen", 2000, 4,
+	"e_tool", 1000, 4,
 	"medium_storage_battery", 600, 5,
 	"atomic_lamp", 2000, 5,
 	"1st_aid", 2000, 6,
@@ -55,45 +55,43 @@ local reward_list = {
 	"large_repairkit", 2500, 6,
 	"anesthesia", 1000, 7,
 	"bio_power_storage_mkII", 2000, 7,
-	"kawaii_UPS", 3000, 7,
 	"omnicamera", 800, 7,
 	"headlight_reinforced", 500, 7,
-	"storage_battery", 1000, 8,
+	"storage_battery", 1000, 8, --R8は2年目秋初め頃。2RP/D DP800(500*2+800=MAX1800P/D) 転送フルチャージ化
 	"solar_panel_v3", 3000, 8,
 	"bio_probability_travel", 5000, 9, --R9は3年目直前。解放要素が恐らく最も少ない所…しかしここまできたらラストのR10まで行って色々解放されたくなる
 	"bio_speed", 5000, 9,
 	"plut_cell", 3000, 10
 }
 
--- ■素材系アイテム表示名,id,cost,rank --序盤はポイントが重すぎてなんらかの逼迫した状況専用そう。R5あたりからAPとチャージ量と係数分で現実的に…と思ったらRank5からポイント需要が…
+-- ■素材系アイテム表示名,id,cost,rank --序盤はポイントが重すぎてなんらかの逼迫した状況専用そう。R5あたりからDPとチャージ量と係数分で現実的に…と思ったらR5からポイント需要が…
 local material_list = {
-	"plastic bags", "bag_plastic", 200, 2,
-	"wood planks", "2x4", 500, 2,
-	"plastic piece", "plastic_chunk", 500, 2,
-	"leather", "leather", 500, 2, 
-	"cloth rags", "rag", 500, 2,
-	"thread", "thread", 500, 2,
-	"scrap metal", "scrap", 500, 2,
-	"kevlar plates", "kevlar_plate", 1000, 4,
-	"nomex", "nomex", 1000, 4
+	"ビニール袋", "bag_plastic", 200, 2,
+	"木材", "2x4", 500, 2,
+	"プラスチック片", "plastic_chunk", 500, 2,
+	"端切れ(革)", "leather", 500, 2, 
+	"布", "rag", 500, 2,
+	"糸", "thread", 500, 2,
+	"鉄屑", "scrap", 500, 2,
+	"ケブラー", "kevlar_plate", 1000, 4,
+	"ノーメックス", "nomex", 1000, 4
 }
 
 -- ■装備系アイテムid,cost,rank --消耗品系の用途が欲しい
 local equip_list = {
 	"kawaii_arrow_ribbon", 200, 2,
-	"kawaii_crowbar_lance", 2000, 3,
+	"kawaii_crowbar_lance", 2500, 3,
 	"kawaii_glass_bow", 3000, 3,
-	"kawaii_spear_steel", 1500, 3,
-	"kawaii_rita_and_rosa", 3500, 4,
-	"kawaii_maid_hat_thermal_off", 1000, 5,
-	"kawaii_maid_dress_ex", 1800, 5,
-	"kawaii_secretpoach", 750, 5,
-	"kawaii_arrow_feather",500, 5,
+	"kawaii_secretpoach", 1500, 4,
+	"kawaii_maid_hat_thermal_off", 2000, 5,
+	"kawaii_maid_dress_ex", 3500, 5,
+	"kawaii_arrow_feather", 750, 5,
 	"kawaii_leila", 6000, 6,
 	"kawaii_shelia_off", 6000, 6,
+	"kawaii_rita_and_rosa", 3500, 6,
 	"kawaii_crystal_td", 4000, 7,
-	"kawaii_maid_hat_lss", 1500, 7,
-	"kawaii_maid_dress_lss", 3000, 7,
+	"kawaii_maid_hat_lss", 2500, 7,
+	"kawaii_maid_dress_lss", 4500, 7,
 	"kawaii_boots_hi", 1500, 7,
 	"kawaii_shoes_hi", 1500, 7,
 	"kawaii_death_scythe", 8500, 8,
@@ -103,11 +101,11 @@ local equip_list = {
 -- ■液体表示名,内容量(L),id,コスト,ランク
 local liquid_list = {
 	"Water", 2, "water", 250, 3, --R3は10日目。早ければ車両を触り始める頃？
-	"Clean Water", 0.5, "water_clean", 200, 3,
-	"Lamp Oil", 0.5, "lamp_oil", 500, 3,
+	"Clean_Water", 0.5, "water_clean", 300, 3,
+	"Lamp_Oil", 0.5, "lamp_oil", 500, 3,
 	"Gasoline", 0.5, "gasoline", 500, 3,
-	"Clean Water", 2, "water_clean", 500, 4,
-	"Lamp Oil", 2, "lamp_oil", 1000, 4,
+	"Clean_Water", 2, "water_clean", 500, 4,
+	"Lamp_Oil", 2, "lamp_oil", 1000, 4,
 	"Gasoline", 2, "gasoline", 1000, 4,
 	"Water", 10, "water", 1000, 5, --R5は1年目秋終わり頃。基本的な物が揃う頃？ここからチャージ量とか変わるから1日あたり1.5RP
 	"Gasoline", 10, "gasoline", 1500, 5,
@@ -132,15 +130,20 @@ end
 
 -- ■あちこちで参照しそうなやつ
 AMTS_Point = 0
+AMTS_MaxPoint = 3
 AMTS_RP = 0
 AMTS_Rank = 1
 AMTS_NextRP = 0
-reqRP = { 3, 7, 12, 15, 20, 25, 30, 50, 60, 9999 } --デフォルトで1季14日、年56日 R1-4[1/D]R5-[1.5/D]R8-[2/D] R3=10 R5=37(27) R7=82(34) R8=112(23) R9=163(26) R10=223(30)
-ap = { 0, 100, 200, 400, 800, 2000 }
+AMTS_JumpList_name = {}
+AMTS_JumpCost = 50 --■テレポートコスト
+AMTS_reqRP = { 3, 7, 12, 15, 20, 25, 30, 50, 60, 9999 } --■ランク毎の要求RankPoint (※今は1季91日)デフォルトで1季14日、年56日 R1-4[1/D]R5-[1.5/D]R8-[2/D] R3=10 R5=37(27) R7=82(34) R8=112(23) R9=163(26) R10=223(30)
+AMTS_DP = { 0, 100, 200, 400, 800, 2000 } --■2ランク毎に増える毎日の自動獲得ポイント
+InitFlag_Point = 0
 
 -- ■打つのがめんどくさい
 DNr = "kawaii_amts_reciver"
 DNt = "kawaii_amts_transmitter"
+DNv = "kawaii_amts_point_viewer"
 
 -- ■未解放時のメニュー表記
 local equipStr = "<color_dark_gray>[[Locked]]: Requires Rank2</color>"
@@ -148,30 +151,32 @@ local materialStr = "<color_dark_gray>[[Locked]]: Requires Rank2</color>"
 local liquidStr = "<color_dark_gray>[[Locked]]: Requires Rank3</color>"
 local armsStr = "<color_dark_gray>[[Locked]]: Requires Rank5</color>"
 
-
 -- ■転送要請(アイテム入手)アイテムの処理
 function amts_reciver(item2, active)
 	Load_AMTS_Point()
 	EditRP(0)
 
 	if AMTS_Rank > 1 then
-		equipStr = "Buy a product"
-		materialStr = "Buy raw materials"
+		equipStr = "buy a product"
+		materialStr = "buy a raw materials"
 	end
 	if AMTS_Rank > 2 then
-		liquidStr = "Buy liquids"
+		liquidStr = "buy liquids"
 	end
 	if AMTS_Rank > 4 then
 		armsStr = "AM-ARMS Ammunition Interface"
 	end
 	
-	local c = CreateMenu("AMTS Product Catalogue (Points:" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP ..")" , armsStr, "Make a purchase", materialStr, liquidStr, equipStr, "Cancel")
+	local c = CreateMenu("AMTS Product Catalogue:" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP ..")" , armsStr, "make a purchase", materialStr, liquidStr, equipStr, "cancel")
 		if c == 0 then --■AM-ARMSコントロール
 			if AMTS_Rank < 5 then
 				cmsg("This requires at least store rank 5", "red")
 				return
 			end
 			ARMSMenu("AM-ARMS controller (Points::" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. "/Next:" .. AMTS_NextRP .. ")")
+			
+		elseif c == 1 then --■テレポーターの起動
+			amts_teleport(item2)
 			
 		elseif c == 1 then --■物資転送
 			p3menu(reward_list,item2)
@@ -221,14 +226,24 @@ function amts_reciver(item2, active)
 		
 end
 
+
 -- ■debug
 function debugAdd(point)
 	EditCharges(DNr, 6)
 	EditCharges(DNt, 12)
-
 	EditPoint(point)
-
 	msg("DebugAdded!!")
+end
+
+-- ■3つの座標を表示する(debug)
+function PosMSG(name)
+	local p
+	p = player:global_omt_location()
+	msg("omt", name, math.ceil(p.x), math.ceil(p.y), math.ceil(p.z))
+	p = player:global_sm_location()
+	msg("sm", name, math.ceil(p.x), math.ceil(p.y), math.ceil(p.z))
+	p = player:global_square_location()
+	msg("square", name, math.ceil(p.x), math.ceil(p.y), math.ceil(p.z))
 end
 
 -- ■3要素配列用転送メニュー(手抜き用)
@@ -239,6 +254,124 @@ function p3menu(list,item2)
 		ReceiveItem(item(name,1),cost,rank,item2.charges)
 	else
 		msg("Transaction cancelled.")
+	end
+end
+
+-- ■テレポーター起動
+function amts_teleport(it)
+	LoadJumpList(it)
+	local menu = game.create_uimenu()
+	local choice = -1
+	menu.title = "テレポート先を選んで下さい(所有ポイント:" .. AMTS_Point .. "/Rank:" .. AMTS_Rank .. ")"
+	local n = AMTS_JumpList_name
+	
+	for i = 0, 9 do
+		local omx = tonumber(it:get_var("teleport_omx" .. i, "0"))
+		local omy = tonumber(it:get_var("teleport_omy" .. i, "0"))
+		local omz = tonumber(it:get_var("teleport_omz" .. i, "0"))
+		local pstr = string.format("<color_dark_gray>(%s,%s,%s)</color>", math.ceil(omx), math.ceil(omy), math.ceil(omz))
+		
+		if i < AMTS_Rank + 1 then
+			menu:addentry("<color_pink>[slot" .. math.ceil(i) .. "]</color>" .. n[i] .. pstr)
+		else
+			menu:addentry("<color_dark_gray>[slot" .. math.ceil(i) .. "]" .. " --- Locked(" .. "Rank" .. i ..  ") ---</color>")
+		end
+	end
+	
+	menu:addentry("やめる")
+	menu:query(true)
+	local no = math.ceil(menu.selected)
+	
+	if no > #AMTS_JumpList_name then
+		cmsg("light_red", "テレポートをキャンセルしました。")
+		return
+	end
+	
+	if no > AMTS_Rank then
+		cmsg("light_red", "現在のRankでは使用できないスロットです。")
+		return
+	end
+  
+	local no2
+	if no == 0 then
+		no2 = CreateMenu("所有ポイント:" .. AMTS_Point .. "/" .. "[スロット" .. no .. "]" .. AMTS_JumpList_name[no], "<color_light_green>["..AMTS_JumpCost.."Point]</color>テレポート", "やめる")
+		if no2 == 0 then
+			kawaii_teleport(it,no)
+			return
+		else
+			cmsg("cyan", "テレポートをキャンセルしました。")
+			return
+		end
+	end
+	
+	no2 = CreateMenu("[slot" .. no .. "]" .. AMTS_JumpList_name[no], "<color_light_green>["..AMTS_JumpCost.."Point]</color>テレポート", "現在位置を登録", "登録名の編集", "やめる")
+	if no2 == 0 then --■テレポート
+		local no3 = CreateMenu("現在の座標を一時的に登録しますか？", "登録してテレポート", "登録せずにテレポート", "キャンセル")
+		
+		if no3 == 0 then --■一時登録あり
+			if it:get_var("teleport_name" .. no, "null") == "null" then
+				cmsg("light_red", "座標が記録されていません。")
+				return
+			end
+			
+			local om = player:global_omt_location()
+			local gpos = player:global_square_location()
+			cmsg("cyan", "[Slot0]一時登録座標 にテレポート前の座標を登録しました。")
+			kawaii_teleport(it,no)
+			kawaii_teleport_save(it, 0, "一時登録座標", om, gpos)
+			
+		elseif no3 == 1 then --■一時登録なし
+			kawaii_teleport(it,no)
+			
+		else --■キャンセル
+			cmsg("cyan", "テレポートをキャンセルしました。")
+			return
+		end
+
+	elseif no2 == 1 then --■登録
+		local regname = game.string_input_popup("",30,"登録名を入力してください\n(未入力でキャンセル)")
+		if regname == "" then
+			cmsg("cyan", "テレポートリストの登録をキャンセルしました")
+			return
+		end
+		
+		kawaii_teleport_save(it,no,regname)
+		msg("[Slot%s]%s に現在位置を登録しました。", no, regname)
+		
+	elseif no2 == 2 then --■編集
+		if it:get_var("teleport_name" .. no, "null") == "null" then
+			cmsg("light_red", "未登録スロットの名前は変更できません。")
+			return
+		end
+		
+		local regname = game.string_input_popup("",30,"新しい名前を入力してください\n(未入力でキャンセル)")
+		if regname == "" then
+			cmsg("cyan", "テレポートリストの登録名編集をキャンセルしました%s, no2")
+			return
+		end
+		
+		it:set_var("teleport_name" .. no, regname)
+		cmsg("cyan", "[Slot%s]の登録名を[%s]に変更しました。", no, regname)
+		
+	else --■キャンセル
+		return
+	end
+
+	function tmptp(it2,no2)
+
+	end
+end
+
+-- ■テレポート先名前リストのロード
+function LoadJumpList(it)
+	local name
+	for i = 0, 9 do
+		name = it:get_var("teleport_name" .. i, "未登録")
+		if i == 0 then
+			AMTS_JumpList_name[i] = "一時登録座標"
+		else
+			AMTS_JumpList_name[i] = name
+		end
 	end
 end
 	
@@ -261,12 +394,12 @@ function amts_transmitter(item2, active)
 		viewNouhin()
 	elseif c == 2 then
 		if item2.charges == 0 then
-			cmsg("Insufficient charges remaining", "light_red")
+			cmsg( "light_red", "Insufficient charges remaining")
 			return
 		end
 		
 		player:i_add(item("kawaii_amts_pacsys",1))
-		cmsg("Received an AMTS Matter Compressor", "cyan")
+		cmsg("cyan", "Received an AMTS Matter Compressor")
 		EditCharges(DNt, -1)
 	elseif c == 3 then
 	
@@ -278,7 +411,7 @@ end
 -- ■AMTSインストールキット(外箱のメモを読む)
 function amts_kit(item, active)
 	game.popup(gText("boxmemo"))
-	cmsg("You opened the fancy box", "light_green")
+	cmsg("light_green", "You opened the fancy box")
 	player:i_add(item("kawaii_amts_box2",1))
 	player:i_add(item("kawaii_amts_manual",1))
 	player:i_rem(item)
@@ -286,7 +419,7 @@ end
 
 -- ■AMTSインストールキット(施術)
 function amts_kit2(item, active)
-	cmsg("AMTS device implanted.", "light_green")
+	cmsg("light_green", "AMTS device implanted。")
 	player:set_value("Kawaii_AMTS_Active", "true")
 	player:i_add(item("kawaii_amts_reciver", 1))
 	player:i_add(item("kawaii_amts_transmitter", 1))
@@ -306,13 +439,13 @@ end
 -- ■アイテム受取
 function ReceiveItem(item,cost,rank,charges)
 	if charges == 0 then
-		cmsg("Insufficient power remaining", "light_red")
+		cmsg("light_red", "Insufficient power remaining")
 		return
 	elseif rank > AMTS_Rank then
-		cmsg("Insufficient store rank", "light_red")
+		cmsg("light_red", "Insufficient store rank")
 		return
 	elseif cost > AMTS_Point then
-		cmsg("Insufficient points available", "light_red")
+		cmsg("light_red", "Insufficient points available")
 		return
 	end
 	
@@ -357,13 +490,13 @@ end
 -- ■アイテム納品
 function SendItem(item,point,charges)
 	if charges == 0 then
-		cmsg("Insufficient charges remaining", "light_red")
+		cmsg("light_red", "Insufficient charges remaining")
 		return
 	end
 	EditPoint(point)
 	EditCharges(DNt, -1)
 	player:i_rem(item)
-	msg("<color_pink>[+" .. point .. "Point]</color>" .. item:display_name() .. " has been sent in exchange for points. (Points:" .. AMTS_Point .. ")")
+	msg("<color_pink>[+" .. point .. "Point]</color>" .. item:display_name() .. " has been sent in exchange for points. (Points:".. AMTS_Point .. ")")
 	EditRP(1)
 end
 
@@ -386,10 +519,10 @@ function EditRP(point)
 	local oldRank = AMTS_Rank
 	local rp2 = AMTS_RP
 	local i = 1
-	local d = reqRP[1]
+	local d = AMTS_reqRP[1]
 	while AMTS_Rank < 10 and rp2 > 0 do
-		if rp2 > reqRP[i] - 1 then
-			rp2 = rp2 - reqRP[i]
+		if rp2 > AMTS_reqRP[i] - 1 then
+			rp2 = rp2 - AMTS_reqRP[i]
 		else
 			break
 		end
@@ -397,13 +530,12 @@ function EditRP(point)
 	end
 	
 	AMTS_Rank = i
-	AMTS_NextRP = reqRP[i] - rp2
-	
+	AMTS_NextRP = AMTS_reqRP[i] - rp2
+
 	if point > 0 and AMTS_Rank > oldRank then
 		cmsg("Your AMTS rank has increased!(Rank" .. i .. ")", "light_green")
 		local apt = "Bonus points earned" .. ap[math.ceil(i/2)] .. "->" .. ap[math.ceil(i/2)+1]
 		local bonus = "Congratulation! You have reached the next store rank!"
-		--参考用:ap = { 0, 100, 200, 300, 500, 1000 }
 		
 		if i == 2 then
 			bonus = bonus .. apt
@@ -483,6 +615,7 @@ function MergeMenuText(name,rank,point,grayoutmode)
 	return name2
 end
 
+
 -- ■ARMSメニュー
 function ARMSMenu(title)
 	local menu = game.create_uimenu()
@@ -506,10 +639,9 @@ function ARMSMenu(title)
 		menu:addentry(name2)
 	end
 
-	menu:addentry("Cancel")
+	menu:addentry("やめる")
 	menu:query(true)
 	local no = menu.selected
-
 	
 		if rank[no+1] > AMTS_Rank then
 			msg("ランクが不足しています。")
@@ -519,23 +651,21 @@ function ARMSMenu(title)
 			msg("ポイントが不足しています。")
 			return
 		end
+		
 	if no < #name then
 		if no == 0 then
-
 			if EditCharges(DNr,-1) == 0 then
 				return
 			end
 			
 			local cmag = GetInvItem("kawaii_eve_mag")
 			if cmag:typeId() == "null" then
-				cmsg("EVE magazine not found.","red")
+				cmsg("red", "EVE magazine not found.")
 				return
 			end
 			
 			player:i_rem(cmag)
 			local ammo = item("kawaii_308AM",1)
-
-
 			ammo.charges = 20
 			local mag = item("kawaii_eve_mag",1)
 			mag:put_in(ammo)
@@ -591,7 +721,7 @@ function LiquidMenu(title)
 		menu:addentry(name)
 	end
 	
-	menu:addentry("Cancel")
+	menu:addentry("やめる")
 	menu:query(true)
 	choice = menu.selected
 	return choice
@@ -654,7 +784,7 @@ function RewardListMenu(title,itemlist)
 		menu:addentry(name2)
 	end
 	
-	menu:addentry("Cancel")
+	menu:addentry("cancel")
 	menu:query(true)
 	local no = menu.selected
 	
@@ -686,11 +816,11 @@ function ItemListMenu(title)
 		end
 	end
 	if count == 0 then
-		cmsg("No item has been received.", "red")
+		cmsg("light_red", "No tem has been received.")
 		return
 	end
 	
-	menu:addentry("Quit")
+	menu:addentry("cancel")
 	menu:query(true)
 	choice = menu.selected
 	if #has_list < choice then
@@ -728,12 +858,12 @@ function Load_AMTS_Point()
 	end
 end
 
--- ■デバイスのチャージを増減する。ついでに増減後のチャージ量を返すけど別に受けなくてもよい
+-- ■デバイスのチャージを増減する
 function EditCharges(name, point)
 	local item = GetInvItem(name)
 	if point > 0 then
 		if math.floor(item.charges) < item:ammo_capacity() then
-			msg(item:display_name() .. " Points increased by +" .. point .. " =")
+			msg(item:display_name() .. "Points increased by +" .. point .. " =")
 			item.charges = item.charges + point
 			if item.charges > item:ammo_capacity() then
 				item.charges = item:ammo_capacity()
@@ -748,7 +878,8 @@ function EditCharges(name, point)
 		if math.floor(item.charges)  > 0 then
 			item.charges = item.charges + point
 		else
-			msg(item:display_name() .. " There are insufficient points available.")
+			msg(item:display_name() .. "There are insufficient points available.")
+			return 0
 		end
 	end
 	
@@ -784,7 +915,7 @@ function GetInvItem(itemid)
 	return item
 end
 
-- ■納品アイテム確認用リストを表示
+-- ■納品アイテム確認用リストを表示
 function viewNouhin()
 	local text = "         <<  納品アイテムリスト  >>     \n"
 	for i in pairs(pac_name) do
@@ -794,8 +925,8 @@ function viewNouhin()
 end
 
 -- ■自動獲得ポイントを返す
-function getAP()
-	return ap[math.floor(AMTS_Rank/2)+1]
+function getDP()
+	return AMTS_DP[math.floor(AMTS_Rank/2)+1]
 end
 
 -- ■地形idを返す
@@ -805,6 +936,7 @@ function getFloorID(point)
 	local terrain_str_id = terrain.id:str()
 	return terrain_str_id
 end
+
 -- ■メニューつくる
 function CreateMenu(title,...)
 	local n = {...}
@@ -821,41 +953,25 @@ function CreateMenu(title,...)
 	return choice
 end
 
--- ■TriPointを表示する(debug)
-function PosMSG(name, point)
-	msg(name, math.ceil(point.x), math.ceil(point.y), math.ceil(point.z))
-end
-
 -- ■テキストを書きやすく
 function _(text)
     return tostring(text):gsub("^\t+", ""):gsub("\n\t+$", ""):gsub("(\n)\t+", "%1")
 end
 
--- ■カラーテスト
-function test_cmsg()
-	cmsg("カラーテスト", "red")
-	cmsg("カラーテスト", "green")
-	cmsg("カラーテスト", "blue")
-	cmsg("カラーテスト", "cyan")
-	cmsg("カラーテスト", "magenta")
-	cmsg("カラーテスト", "brown")
-	cmsg("カラーテスト", "light_red")
-	cmsg("カラーテスト", "light_green")
-	cmsg("カラーテスト", "light_blue")
-	cmsg("カラーテスト", "pink")
-	cmsg("カラーテスト", "yellow")
-	cmsg("カラーテスト", "light_red_red")
-	cmsg("カラーテスト", "light_green_red")
-end
-
 -- ■カラーメッセージ
-function cmsg(msg,color)
-	local str = "<color_" .. color .. ">" .. msg .. "</color>" .. " "
+function cmsg(color, ...)
+	local str = "<color_" .. color .. ">" .. string.format(...) .. "</color>" .. " "
 	game.add_msg(tostring(str))
 end
 
--- ■可変引数メッセージ(引数2つ以上は基本debug用に)
-function msg(msg,...)
+-- ■変数カケール
+function msg(...)
+	local s = string.format(...)
+	game.add_msg(s)
+end
+
+-- ■可変引数メッセージ(さくさくdebug用)
+function msg2(msg,...)
 	local n = {...}
 	local str = msg
 	for i in pairs(n) do
@@ -865,16 +981,16 @@ function msg(msg,...)
 end
 
 -- ■配列がsetできないのでforでぐるぐる
-function ArraySave(namelist)
-	for i = 1, #name_list do
-		player:set_value("Kawaii_name" .. i, namelist[i])
+function ArraySave(list,name)
+	for i = 1, #list do
+		player:set_value(name .. i, list[i])
 	end
 end
 
 -- ■配列がgetできないので
-function ArrayLoad()
-	for i = 1, #name_list do
-		name_list[i-1] = player:get_value("Kawaii_name" .. i)
+function ArrayLoad(list,name)
+	for i = 1, #list do
+		list[i-1] = player:get_value(name .. i)
 	end
 end
 
@@ -964,6 +1080,106 @@ function gText(name)
 	end
 	return text
 end
+
+-- ■神により記述されたテレポート関数群を弄ったもの
+function tri_delta(a, b)
+  return tripoint(a.x - b.x, a.y - b.y, a.z - b.z)
+end
+
+function kawaii_teleport(it,slot)
+  local name = it:get_var("teleport_name" .. slot, "未登録")
+  if slot == 0 then
+  	name = it:get_var("teleport_name" .. slot, "一時登録座標(未登録)")
+  end
+  if name == "未登録" or name == "一時登録座標(未登録)" then
+    cmsg("light_red", "座標が記録されていません。")
+    return 0
+  end
+  
+  if AMTS_Point < AMTS_JumpCost then
+  	cmsg("light_red", "ポイントが不足しています。")
+  	return
+  end
+  EditPoint(-AMTS_JumpCost)
+
+  local omx = tonumber(it:get_var("teleport_omx" .. slot, "0"))
+  local omy = tonumber(it:get_var("teleport_omy" .. slot, "0"))
+  local omz = tonumber(it:get_var("teleport_omz" .. slot, "0"))
+  local gx = tonumber(it:get_var("teleport_gx" .. slot, "0"))
+  local gy = tonumber(it:get_var("teleport_gy" .. slot, "0"))
+  local gz = tonumber(it:get_var("teleport_gz" .. slot, "0"))
+  local om = tripoint(omx, omy, omz)
+  local gpos = tripoint(gx, gy, gz)
+
+  -- 近くにいるNPCを一緒に連れていく
+  local npcs = {}
+  local tmp_pos = player:pos()
+  for dx = -10, 10 do
+      for dy = -10, 10 do
+          local npc_loc = tripoint(tmp_pos.x + dx, tmp_pos.y + dy, tmp_pos.z)
+          local tmp_npc = game.get_npc_at(npc_loc)
+          if tmp_npc then
+              if tmp_npc:is_npc() then
+                  table.insert(npcs, tmp_npc)
+              end
+          end
+      end
+  end
+  
+  g:place_player_overmap(om)
+  local cur_gpos = player:global_square_location()
+  local cur_pos = player:pos()
+
+  -- player:pos()で取得できる座標はバッファ上の一時的な座標なので、
+  -- global_square_locationで絶対座標を取得して補正する
+  local delta = tri_delta(cur_gpos, gpos)
+  player:setx(cur_pos.x - delta.x)
+  player:sety(cur_pos.y - delta.y)
+  player:setz(cur_pos.z - delta.z)
+
+  -- NPCを再配置する
+  tmp_pos = player:pos()
+  for _,tmp_npc in ipairs(npcs) do
+    for dx = -10, 10 do
+        for dy = -10, 10 do
+            local npc_loc = tripoint(tmp_pos.x + dx, tmp_pos.y + dy, tmp_pos.z)
+            if not game.get_critter_at(npc_loc) then
+                -- setposで座標を更新するとNPCが現在のovermapに現れる
+                tmp_npc:setpos(npc_loc)
+            end
+        end
+    end
+  end
+  g:reload_npcs()
+
+  cmsg("cyan", "[Slot%s]%s にテレポートしました。(所有ポイント:%s)", slot, name, AMTS_Point)
+  return 0
+end
+
+function kawaii_teleport_save(it,slot,name,om2,gpos2)
+  local om,gpos
+  if om2 == null then
+    om = player:global_omt_location()
+    gpos = player:global_square_location()
+  else
+    om = om2
+    gpos = gpos2
+  end
+  
+  it:set_var("teleport_name" .. slot, name)
+  -- intで記憶するとなぜか読み出しが上手くいかないのでstringで記憶しておく
+  it:set_var("teleport_omx" .. slot, tostring(om.x))
+  it:set_var("teleport_omy" .. slot, tostring(om.y))
+  it:set_var("teleport_omz" .. slot, tostring(om.z))
+  it:set_var("teleport_gx" .. slot, tostring(gpos.x))
+  it:set_var("teleport_gy" .. slot, tostring(gpos.y))
+  it:set_var("teleport_gz" .. slot, tostring(gpos.z))
+
+  -- msg("位置を記憶しました。")
+  -- msg("Overmap (%d, %d, %d)", om.x, om.y, om.z)
+  -- msg("Global square (%d, %d, %d)", gpos.x, gpos.y, gpos.z)
+end
+
 
 game.register_iuse("IUSE_KAWAII_AMTS_KIT", amts_kit)
 game.register_iuse("IUSE_KAWAII_AMTS_KIT2", amts_kit2)
