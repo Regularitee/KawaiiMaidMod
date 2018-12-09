@@ -1,4 +1,4 @@
-Last updated to KawaiiMaidMod v2.1.3 (This may no longer be true. Merging in DOM's working preload.lua probably reverted some recent changes)
+Last updated to KawaiiMaidMod v2.1.3 
 
 ## What is this?
 
