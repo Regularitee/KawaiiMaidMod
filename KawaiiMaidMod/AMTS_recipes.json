@@ -50,7 +50,8 @@
 	"difficulty": 5,
 	"time": 10000,
 	"reversible": false,
-	"autolearn": true,
+	"autolearn" : false,
+	"book_learn" : [[ "kawaii_book_pacsys", 0 ]],
 	"components": [
 		[ ["kawaii_amts_pacsys" , 1] ],
 		[ ["log" , 6 ] ]
@@ -62,10 +63,11 @@
 	"category": "CC_OTHER",
 	"subcategory": "CSC_OTHER_OTHER",
 	"skill_used": "fabrication",
-	"difficulty": 5,
+	"difficulty": 3,
 	"time": 10000,
 	"reversible": false,
-	"autolearn": true,
+	"autolearn" : false,
+	"book_learn" : [[ "kawaii_book_pacsys", 0 ]],
 	"components": [
 		[ ["kawaii_amts_pacsys" , 1] ],
 		[ ["scrap" , 60 ] ]
@@ -77,10 +79,11 @@
 	"category": "CC_OTHER",
 	"subcategory": "CSC_OTHER_OTHER",
 	"skill_used": "fabrication",
-	"difficulty": 5,
+	"difficulty": 2,
 	"time": 10000,
 	"reversible": false,
-	"autolearn": true,
+	"autolearn" : false,
+	"book_learn" : [[ "kawaii_book_pacsys", 0 ]],
 	"components": [
 		[ ["kawaii_amts_pacsys" , 1] ],
 		[ ["rag" , 60 ] ]

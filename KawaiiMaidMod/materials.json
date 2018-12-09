@@ -2,7 +2,7 @@
   {
     "type": "material",
     "ident": "kawaii_glass",
-    "name": "Tempered Carbon Glass",
+    "name": "A&M Tempered Carbon Glass",
     "density": 30,
     "bash_resist": 3,
     "cut_resist": 15,
