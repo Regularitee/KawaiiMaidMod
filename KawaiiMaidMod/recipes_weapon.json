@@ -164,23 +164,92 @@
 },
 {
   "type" : "recipe",
-  "result": "kawaii_spear_steel",
+  "result": "kawaii_customspear_v1",
   "category": "CC_WEAPON",
   "subcategory": "CSC_WEAPON_PIERCING",
   "skill_used": "fabrication",
-  "difficulty": 4,
-  "time": 20000,
-  "reversible": true,
+  "difficulty": 0,
+  "time": 2000,
+  "autolearn": true,
+  "qualities":[
+    { "id": "HAMMER", "level": 1 }
+  ],
+  "components": [
+    [
+      [ "steel_chunk", 4 ]
+    ],
+    [
+      [ "pipe", 1 ]
+    ]
+  ]
+},
+{
+  "type" : "recipe",
+  "result": "kawaii_customspear_v2",
+  "category": "CC_WEAPON",
+  "subcategory": "CSC_WEAPON_PIERCING",
+  "skill_used": "fabrication",
+  "difficulty": 3,
+  "time": 30000,
   "autolearn": true,
   "qualities":[
     { "id": "HAMMER", "level": 2 }
   ],
   "components": [
     [
-      [ "steel_chunk", 12 ]
+      [ "kawaii_customspear_v1", 1 ]
+    ],
+    [
+      [ "steel_chunk", 6 ]
     ],
     [
       [ "duct_tape", 100 ]
+    ],
+    [
+      [ "glass_shard", 8 ]
+    ]
+  ]
+},
+{
+  "type" : "recipe",
+  "result": "kawaii_customspear_v3",
+  "category": "CC_WEAPON",
+  "subcategory": "CSC_WEAPON_PIERCING",
+  "skill_used": "fabrication",
+  "difficulty": 6,
+  "time": 66000,
+  "autolearn": true,
+  "qualities":[
+      { "id": "ANVIL", "level": 3 },
+      { "id": "HAMMER", "level": 3 },
+      { "id": "CHISEL", "level": 3 }
+  ],
+  "tools": [
+    [
+      ["tongs", -1]
+    ],
+    [
+      ["swage", -1]
+    ],
+    [
+      ["forge", 200], [ "oxy_torch", 40]
+    ]
+  ],
+  "components": [
+    [
+      [ "kawaii_customspear_v2", 1 ]
+    ],
+    [
+      [ "steel_chunk", 12 ]
+    ],
+    [
+      [ "duct_tape", 200 ]
+    ],
+    [
+      [ "glass_shard", 8 ]
+    ],
+    [
+      [ "kevlar_plate", 2 ]
     ]
   ]
 },
